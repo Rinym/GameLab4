@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://dxp8pde34yvo5"]
+
+[ext_resource type="Script" uid="uid://ct1f2rduyc6tf" path="res://Scenes/Actors/monstter_skeleton.gd" id="1_gvkss"]
+[ext_resource type="Texture2D" uid="uid://dtxhrpbqfd8lm" path="res://Skeleton_Without_VFX/Skeleton_01_White_Walk.png" id="2_wncjj"]
+[ext_resource type="AudioStream" uid="uid://wg4mya74ni6n" path="res://Assets/Sound/FX/explosion.wav" id="3_645cc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jnah"]
+radius = 17.0
+height = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sj3c2"]
+radius = 16.666666
+height = 33.333332
+
+[sub_resource type="Curve" id="Curve_dy427"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.246032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_10h40"]
+offsets = PackedFloat32Array(0.25, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ly7s"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4410h"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jok7u"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a0pc"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rij1c"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwl3f"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d6yn"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gttus"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2g32"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oueyv"]
+atlas = ExtResource("2_wncjj")
+region = Rect2(864, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ly7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4410h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jok7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a0pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rij1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwl3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d6yn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gttus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2g32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oueyv")
+}],
+"loop": 1,
+"name": &"Skeliton",
+"speed": 5.0
+}]
+
+[node name="EnermySkeleton" type="CharacterBody2D" unique_id=1480164594]
+script = ExtResource("1_gvkss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247743805]
+position = Vector2(0, -31)
+scale = Vector2(1.7059431, 1.4035512)
+shape = SubResource("CapsuleShape2D_6jnah")
+
+[node name="HitArea" type="Area2D" parent="." unique_id=1630671345]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitArea" unique_id=1316531014]
+position = Vector2(1, -31)
+scale = Vector2(1.5341288, 1.705097)
+shape = SubResource("CapsuleShape2D_sj3c2")
+
+[node name="DeathParticles" type="CPUParticles2D" parent="." unique_id=1393201066]
+z_index = 2
+position = Vector2(2.08165e-12, -33)
+scale = Vector2(1.5, 1.5)
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 21.05
+direction = Vector2(0, -1)
+spread = 21.48
+gravity = Vector2(0, 400)
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+damping_min = 1.0
+damping_max = 1.0
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 2.0
+scale_amount_max = 30.0
+scale_amount_curve = SubResource("Curve_dy427")
+color = Color(0.671534, 0.004919853, 0, 1)
+color_ramp = SubResource("Gradient_10h40")
+
+[node name="Sprite" type="Node2D" parent="." unique_id=307542762]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite" unique_id=1955332073 groups=["Enemy"]]
+position = Vector2(2, -35)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+animation = &"Skeliton"
+frame_progress = 0.55633724
+
+[node name="Ray" type="Node2D" parent="Sprite" unique_id=50512017]
+
+[node name="playerRay" type="RayCast2D" parent="Sprite/Ray" unique_id=2134597159]
+position = Vector2(0, -22)
+target_position = Vector2(45, 0)
+collision_mask = 2
+
+[node name="wallRay" type="RayCast2D" parent="Sprite/Ray" unique_id=5338936]
+position = Vector2(0, -22)
+target_position = Vector2(-28, 0)
+
+[node name="floorRay" type="RayCast2D" parent="Sprite/Ray" unique_id=1600969923]
+position = Vector2(-24, -16)
+target_position = Vector2(0, 23)
+
+[node name="DeathSfx" type="AudioStreamPlayer" parent="." unique_id=2012937868 groups=["Enemy"]]
+stream = ExtResource("3_645cc")
+volume_db = -3.0
+bus = &"sfx"
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

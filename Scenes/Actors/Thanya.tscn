@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bvedrti1yyqfy"]
+
+[ext_resource type="Texture2D" uid="uid://m3mt73p066qt" path="res://Assets/Spritesheet/good_site.png" id="1_5ehra"]
+
+[sub_resource type="Animation" id="Animation_54na1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_g13cm"]
+resource_name = "dance"
+length = 1.1666666
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-10, -17), Vector2(-13, -62), Vector2(-13, -62)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.16914187, -0.16913714]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6cqnj"]
+_data = {
+&"RESET": SubResource("Animation_54na1"),
+&"dance": SubResource("Animation_g13cm")
+}
+
+[node name="Thanya" type="Node2D" unique_id=688987250]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1175930614]
+position = Vector2(-10, -17)
+texture = ExtResource("1_5ehra")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=441574655]
+libraries/ = SubResource("AnimationLibrary_6cqnj")
+autoplay = &"dance"

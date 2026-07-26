@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ek7hxkqp2wff"]
+
+[ext_resource type="PackedScene" uid="uid://d27bcsmx82vfa" path="res://Scenes/Actors/enemy.tscn" id="1_b7voo"]
+[ext_resource type="Script" uid="uid://bx5lotsye1r4s" path="res://Scenes/Actors/monster_small.gd" id="2_a8voy"]
+[ext_resource type="Texture2D" uid="uid://c30dfdhsk1osk" path="res://Assets/Picture/Rats.png" id="3_5bseq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7voo"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(0, 0, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8voy"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(48, 0, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngoay"]
+atlas = ExtResource("3_5bseq")
+region = Rect2(96, 0, 48, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7ctk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7voo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8voy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngoay")
+}],
+"loop": 1,
+"name": &"slim",
+"speed": 10.0
+}]
+
+[node name="Enemy" unique_id=600502477 instance=ExtResource("1_b7voo")]
+script = ExtResource("2_a8voy")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=587424215]
+position = Vector2(0, -23.000002)
+scale = Vector2(-1.0361367, 0.56567335)
+
+[node name="CollisionShape2D2" parent="HitArea" parent_id_path=PackedInt32Array(1115411835) index="0" unique_id=2008793250]
+position = Vector2(0, -23)
+scale = Vector2(1.1523849, 0.5436303)
+
+[node name="Sprite" parent="." index="3" unique_id=1445111960]
+position = Vector2(0, -1)
+
+[node name="AnimateSprite" type="AnimatedSprite2D" parent="Sprite" index="0" unique_id=87960724]
+position = Vector2(1, -18)
+scale = Vector2(0.7708333, 0.7777778)
+sprite_frames = SubResource("SpriteFrames_l7ctk")
+animation = &"slim"
+frame_progress = 0.67017174
+
+[node name="Ray" parent="Sprite" index="1" unique_id=1415425330]
+visible = false

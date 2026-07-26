@@ -1,0 +1,94 @@
+[gd_scene format=4 uid="uid://b48s52q3f64kl"]
+
+[ext_resource type="PackedScene" uid="uid://d27bcsmx82vfa" path="res://Scenes/Actors/enemy.tscn" id="1_a4af2"]
+[ext_resource type="Script" uid="uid://bx5lotsye1r4s" path="res://Scenes/Actors/monster_small.gd" id="2_tyn28"]
+[ext_resource type="Texture2D" uid="uid://b31eqfrmh586p" path="res://Assets/Picture/Enemy3-Fly.png" id="3_s657p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfui1"]
+atlas = ExtResource("3_s657p")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxrqx"]
+atlas = ExtResource("3_s657p")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej0hy"]
+atlas = ExtResource("3_s657p")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jrfl"]
+atlas = ExtResource("3_s657p")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6urm"]
+atlas = ExtResource("3_s657p")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmraa"]
+atlas = ExtResource("3_s657p")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh5m6"]
+atlas = ExtResource("3_s657p")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnuaw"]
+atlas = ExtResource("3_s657p")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7ctk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfui1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxrqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej0hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jrfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6urm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmraa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh5m6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnuaw")
+}],
+"loop": 1,
+"name": &"mushroom",
+"speed": 10.0
+}]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_ub1y4"]
+data = PackedByteArray("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")
+format = 3
+
+[node name="Enemy" unique_id=600502477 instance=ExtResource("1_a4af2")]
+script = ExtResource("2_tyn28")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=587424215]
+position = Vector2(0, -33)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D2" parent="HitArea" parent_id_path=PackedInt32Array(1115411835) index="0" unique_id=2008793250]
+position = Vector2(0, -33)
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimateSprite" type="AnimatedSprite2D" parent="Sprite" parent_id_path=PackedInt32Array(1445111960) index="0" unique_id=87960724]
+position = Vector2(-1, -30.000004)
+scale = Vector2(1.3201894, 1.2804836)
+sprite_frames = SubResource("SpriteFrames_l7ctk")
+animation = &"mushroom"
+frame_progress = 0.7447001
+
+[node name="DeathSfx" parent="." index="4" unique_id=1907249660]
+stream = SubResource("AudioStreamWAV_ub1y4")
