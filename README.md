@@ -12,7 +12,7 @@ This starter kit provides all the essential mechanics needed to build a complete
 <img src="docs/qrcode.png" style="width:300px;" />
 <img src="docs/demo1.png" style="width:300px;" />
 <img src="docs/demo22.png" style="width:300px;" />
-- [Game Preview](https://computingkku.github.io/2D-Platformer-Starter-Kit/)
+- [Game Preview](https://project-game-dev.netlify.app/kawaii-letter)
 
 
 ## Features
